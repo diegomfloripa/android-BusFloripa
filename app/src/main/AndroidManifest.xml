@@ -7,11 +7,18 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-
-        <meta-data android:name="DATABASE" android:value="busfloripa.db" />
-        <meta-data android:name="VERSION" android:value="1" />
-        <meta-data android:name="QUERY_LOG" android:value="true" />
-        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="br.com.diegomelo" />
+        <meta-data
+            android:name="DATABASE"
+            android:value="busfloripa.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="br.com.diegomelo" />
 
         <activity
             android:name=".SplashActivity"
@@ -21,6 +28,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="br.com.diegomelo.busfloripa.activity.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="br.com.diegomelo.busfloripa.activity.HorariosActivity"
+            android:label="@string/title_activity_horarios" >
         </activity>
     </application>
 

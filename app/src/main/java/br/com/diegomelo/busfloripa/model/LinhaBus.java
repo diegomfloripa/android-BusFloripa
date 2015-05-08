@@ -1,4 +1,4 @@
-package diegomelo.com.br.busfloripa.model;
+package br.com.diegomelo.busfloripa.model;
 
 import com.orm.SugarRecord;
 

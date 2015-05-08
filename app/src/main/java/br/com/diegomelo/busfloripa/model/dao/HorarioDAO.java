@@ -1,6 +1,7 @@
-package diegomelo.com.br.busfloripa.model.dao;
+package br.com.diegomelo.busfloripa.model.dao;
 
-import diegomelo.com.br.busfloripa.model.Horario;
+
+import br.com.diegomelo.busfloripa.model.Horario;
 
 /**
  * Created by Diego on 06/03/2015.

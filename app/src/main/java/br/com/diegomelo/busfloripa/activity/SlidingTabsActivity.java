@@ -1,30 +1,21 @@
 package br.com.diegomelo.busfloripa.activity;
 
-
-
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.GridView;
-import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import br.com.diegomelo.busfloripa.R;
-import br.com.diegomelo.busfloripa.activity.adapter.HorariosAdapter;
 import br.com.diegomelo.busfloripa.activity.adapter.ViewPagerAdapter;
 import br.com.diegomelo.busfloripa.activity.widget.SlidingTabLayout;
-import br.com.diegomelo.busfloripa.model.Horario;
 
-public class HorariosActivity extends ActionBarActivity {
+
+public class SlidingTabsActivity extends ActionBarActivity {
     private Toolbar toolbar;
     private ViewPager viewPager;
-    private ViewPagerAdapter viewPageradapter;
+    private ViewPagerAdapter adapter;
     private SlidingTabLayout tabs;
     private CharSequence[] titulos = {"Semana", "Sábado", "Domingo"};
 
@@ -34,16 +25,17 @@ public class HorariosActivity extends ActionBarActivity {
         setContentView(R.layout.activity_horarios);
 
         init();
+        setSupportActionBar(toolbar);
+        viewPager.setAdapter(adapter);
+        configureTabs();
+
     }
 
     private void init() {
-        toolbar     = (Toolbar)   findViewById(R.id.tool_bar);
-        viewPager   = (ViewPager) findViewById(R.id.view_pager);
-        tabs = (SlidingTabLayout) findViewById(R.id.tabs);
-        setSupportActionBar(toolbar);
-        viewPageradapter = new ViewPagerAdapter(getSupportFragmentManager(), titulos);
-        viewPager.setAdapter(viewPageradapter);
-        configureTabs();
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        viewPager = (ViewPager) findViewById(R.id.view_pager);
+        adapter = new ViewPagerAdapter(getSupportFragmentManager(), titulos);
+        tabs = (SlidingTabLayout)findViewById(R.id.tabs);
     }
 
     private void configureTabs() {
@@ -67,12 +59,11 @@ public class HorariosActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
+        switch (item.getItemId()) {
+            case R.id.action_settings :
+                return true;
 
-        if (id == R.id.action_settings) {
-            return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

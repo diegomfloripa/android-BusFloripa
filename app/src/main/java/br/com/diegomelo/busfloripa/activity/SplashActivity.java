@@ -1,9 +1,11 @@
-package diegomelo.com.br.busfloripa;
+package br.com.diegomelo.busfloripa.activity;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import br.com.diegomelo.busfloripa.R;
 
 
 public class SplashActivity extends ActionBarActivity {

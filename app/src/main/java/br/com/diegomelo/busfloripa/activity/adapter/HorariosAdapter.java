@@ -1,4 +1,4 @@
-package br.com.diegomelo.busfloripa.activity;
+package br.com.diegomelo.busfloripa.activity.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import br.com.diegomelo.busfloripa.model.Horario;
-import diegomelo.com.br.busfloripa.R;
+import br.com.diegomelo.busfloripa.R;
 
 /**
  * Created by Diego on 07/05/2015.
@@ -19,7 +19,6 @@ public class HorariosAdapter extends BaseAdapter {
     private Context context;
     private List<Horario> horarios;
     private LayoutInflater inflater;
-
 
     public HorariosAdapter(Context context, List<Horario> horarios) {
         this.context= context;
@@ -46,7 +45,7 @@ public class HorariosAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder vHolder;
         if(convertView == null) {
-            inflater.inflate(R.layout.modelo_horario, null);
+            convertView = inflater.inflate(R.layout.modelo_horario, null);
             vHolder = new ViewHolder();
             vHolder.tvHoraSaida = (TextView) convertView.findViewById(R.id.tvHoraSaida);
             convertView.setTag(vHolder);
@@ -55,8 +54,6 @@ public class HorariosAdapter extends BaseAdapter {
         }
 
         vHolder.tvHoraSaida.setText(horarios.get(position).getHoraSaida());
-
-
         return convertView;
     }
 
